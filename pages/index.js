@@ -5,10 +5,11 @@ import MyApp, {getArticleFromAPI} from './_app'
 import {Uuid} from './_app'
 import {SWRConfig} from 'swr'
 
-export async function getStaticProps () {
-  const article = await getArticleFromAPI(1)
+export async function getServerSideProps () {
+  const article = await getArticleFromAPI()
   return {
     props: {
+      ...article,
       fallback: {
         // unstable_serialize() array style key
         // [unstable_serialize(['api', 'article', 1])]: article,
