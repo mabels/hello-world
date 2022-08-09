@@ -6,9 +6,11 @@ export const config = {
 };
 
 export default function handler(req, res) {
+  const ret =      Object.entries(this||globalThis||{}).map((a) => {
+         return [a[0], a[1]+''].join(":")
+      })
+  console.log(ret)
   res.status(200).json(
-   Object.entries(req.headers).map((a) => {
-        return a.join(":")
-     })
+    ret
   )
 }

@@ -26,18 +26,13 @@ function MyApp({ Component, pageProps }) {
 }
 
 export const getArticleFromAPI = (url) => {
-  console.log("XXXXXX", url)
   return fetch(`${server}/api/hello`).then((res) => {
-  console.log(">>>>",res)
   return res.json()
 })
 }
 
 export function Uuid() {
-  console.log("yyyyyyyy")
   const bla = useSWR('/api/hello', getArticleFromAPI)
-  console.log("x", bla, "y", bla.data)
-
   return bla.data?.map(i => <><div>{i}</div><br /></>)
 }
 export default MyApp;
