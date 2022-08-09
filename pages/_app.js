@@ -38,7 +38,6 @@ export function Uuid() {
   const bla = useSWR('/api/hello', getArticleFromAPI)
   console.log("x", bla, "y", bla.data)
 
-  return <div>{bla.data?.name}</div>;
+  return bla.data?.map(i => <><div>{i}</div><br /></>)
 }
-
-export default MyApp
+export default MyApp;
