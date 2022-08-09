@@ -6,7 +6,7 @@ const dev = process.env.NODE_ENV !== 'production';
 
 export const server = dev ?
   'http://localhost:3000' :
-  'https://meno.abels.com';
+  'https://meno.adviser.com';
 
 export async function getStaticProps () {
   // `getStaticProps` is executed on the server side.
