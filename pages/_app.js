@@ -4,7 +4,9 @@ const uuid  = require('uuid');
 
 const dev = process.env.NODE_ENV !== 'production';
 
-export const server = dev ? 'http://localhost:3000' : 'https://your_deployment.server.com';
+export const server = dev ?
+  'http://localhost:3000' :
+  'https://meno.abels.com';
 
 export async function getStaticProps () {
   // `getStaticProps` is executed on the server side.
